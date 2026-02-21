@@ -19,7 +19,7 @@ export function initFiltering(elements, indexes) {
         })
     return (data, state, action) => {
         // @todo: #4.2 — обработать очистку поля
-        if (action) {
+        if (action && action.name === 'clear') {
             const input = document.querySelector('input[name="' + action.dataset.field + '"]');
             input.value = '';
             state[action.dataset.field] = '';
